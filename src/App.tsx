@@ -24,7 +24,7 @@ export function App() {
       <Button 
         variant="outline"
         onClick={() => setDarkMode(!darkMode)}
-        className="fixed end-1 text-primary"
+        className="fixed end-4 top-4 flex lg:end-auto lg:start-auto lg:ml-80 text-primary"
       >
         {darkMode == true ? 
           <Sun className="h4 w-4" /> :
@@ -33,6 +33,10 @@ export function App() {
       </Button>
       <div className=" mt-8 flex flex-col items-center">
         <img src="https://github.com/gadiegon.png" alt="" className="h-40 w-40 rounded-full border border-primary" />
+
+        <h1 className="font-bold text-2xl mt-4 text-secondary-foreground">Gadiego Nogueira</h1>
+        <span className="text-base text-primary">Desenvolvedor Front End</span>
+
         <div className="mt-8 h-screen space-y-5 w-80">
           <Button
             onClick={() => window.open(githubUrl, '_blank')}
