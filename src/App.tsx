@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Button } from "./components/ui/button";
 import { Moon, Sun } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import i18n from "./lib/i18n";
+
 
 export function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -10,6 +13,12 @@ export function App() {
   const emailUrl = 'mailto:ngadiego@gmail.com';
   const instagramUrl = 'https://www.instagram.com/gadiego_front/';
   const menuUrl = 'https://gadiegon.github.io/menu/';
+
+  const { t } = useTranslation()
+
+  const changeLanguage = (language: string) => {
+    i18n.changeLanguage(language)
+  }
 
   useEffect(() => {
     if (darkMode) {
@@ -33,9 +42,8 @@ export function App() {
       </Button>
       <div className=" mt-8 flex flex-col items-center">
         <img src="https://github.com/gadiegon.png" alt="" className="h-40 w-40 rounded-full border border-primary" />
-
-        <h1 className="font-bold text-2xl mt-4 text-secondary-foreground">Gadiego Nogueira</h1>
-        <span className="text-base text-primary">Desenvolvedor Front End</span>
+        <h1 className="font-bold text-2xl mt-4 text-secondary-foreground">{t('name')}</h1>
+        <span className="text-base text-primary">{t('title')}</span>
 
         <div className="mt-8 h-screen space-y-5 w-80">
           <Button
@@ -69,7 +77,11 @@ export function App() {
             Cardápio Online
           </Button>
         </div>
-        <span className="mb-10">Feito com ❤️ por Gadiego Nogueira</span>
+        <span className="mb-2">{t('copy')} <span className="text-primary font-bold">{t('name')}</span></span>
+        <div className="flex mb-5 space-x-1">
+          <Button variant={"ghost"} onClick={() => changeLanguage('pt')}>Portugues</Button>
+          <Button variant={"ghost"} onClick={() => changeLanguage('en')}>English</Button>
+        </div>
       </div>
     </div>
   )
