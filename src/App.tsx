@@ -110,7 +110,7 @@ export function App() {
           <Button variant={"ghost"} onClick={() => changeLanguage('pt')}>Portugues</Button>
           <Button variant={"ghost"} onClick={() => changeLanguage('en')}>English</Button>
         </div>
-        <span className="opacity-50 fixed bottom-1 right-1">
+        <span className="opacity-50 pb-4">
           Atualizado em 01/10/2023
         </span>
       </div>
