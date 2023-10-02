@@ -7,14 +7,16 @@ i18n.use(initReactI18next).init({
           translation: {
             "name": "Gadiego Nogueira",
             "title": "Front-end Developer",
-            "copy": "Made with ❤️ by"
+            "copy": "Made with ❤️ by",
+            "update": "Updated 10/01/2023"
           }
         },
         pt: {
           translation: {
             "name": "Gadiego Nogueira",
             "title": "Desenvolvedor Front-end",
-            "copy": "Feito com ❤️ por"
+            "copy": "Feito com ❤️ por",
+            "update": "Atualizado em 01/10/2023"
           }
         }
       },
