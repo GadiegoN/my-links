@@ -24,6 +24,7 @@ export function App() {
   const instagramUrl = "https://www.instagram.com/gadiego_front/";
   const designSystem = "https://gadiegon.github.io/05-design-system/";
   const cvPDF = "/curriculo.pdf";
+  const expertNotes = "https://nlw-expert-notes-gadiegon.vercel.app/"
 
   const { t } = useTranslation();
 
@@ -52,26 +53,26 @@ export function App() {
     localStorage.setItem("language", language);
   };
 
-  
+
   useEffect(() => {
     const lastChosenQuote = localStorage.getItem("lastChosenQuote");
     let newRandomQuoteKey =
-    motivationalQuoteKeys[
+      motivationalQuoteKeys[
       Math.floor(Math.random() * motivationalQuoteKeys.length)
-    ];
-    
+      ];
+
     const newRandomQuote = t(`motivationalQuotes.${newRandomQuoteKey}`);
-    
+
     while (newRandomQuoteKey === lastChosenQuote) {
       newRandomQuoteKey =
         motivationalQuoteKeys[
-          Math.floor(Math.random() * motivationalQuoteKeys.length)
+        Math.floor(Math.random() * motivationalQuoteKeys.length)
         ];
     }
 
 
     setRandomQuote(newRandomQuote);
-      localStorage.setItem("lastChosenQuote", newRandomQuoteKey);
+    localStorage.setItem("lastChosenQuote", newRandomQuoteKey);
   }, [t]);
 
   useEffect(() => {
@@ -133,6 +134,12 @@ export function App() {
             className="w-full h-12"
           >
             E-mail
+          </Button>
+          <Button
+            onClick={() => window.open(expertNotes, "_blank")}
+            className="w-full h-12"
+          >
+            Expert Notes
           </Button>
           <Button
             onClick={() => window.open(designSystem, "_blank")}
