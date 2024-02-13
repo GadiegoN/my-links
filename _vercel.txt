@@ -1,0 +1,2 @@
+vc-domain-verify=gadiego.com.br,a7e04c8ca00d2ee6b723
+vc-domain-verify=www.gadiego.com.br,8d435928c760c2f15dee
